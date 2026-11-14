@@ -53,14 +53,10 @@ HTML を開いて貼るときは **最初のセクション見出しから**選�
 - **Category は publication 単位**（記事ごとではない、実質1つ）。
 - 推奨: 連作で固定する小さな tag spine（3-4個）+ 記事固有を 1-2 個。乱発するとアーカイブが散る。
 
-## 4. カバー画像プロンプト（生成は外部 = ChatGPT 等）
+## 4. カバー画像
 
-essay の **core metaphor** を1つ視覚化する。プロンプト規約:
-
-- **文字を入れない**（画像モデルは文字を崩す。タイトルは Substack のテキスト側で出す）
-- **実在人物を描かない / 暴力を直接描かない**（構造を抽象化する）
-- **16:9 横長**、編集イラスト / conceptual 調など essay のトーンに合わせる
-- 2-3 個の concept 案を出してユーザーに選ばせる（収束図 / 二項対比図 / メタファー直写し 等）。要素が少ない案ほど画像モデルが破綻しにくい
+主題の案・プロンプト・寸法と点検は project-local `.claude/skills/cover-art/SKILL.md` が持つ。note と同時に出す
+エッセイは、note 用の `images/covers/<slug>-note.png` をそのまま使う。
 
 ## 5. ブラウザ自動化（Claude in Chrome）での投稿
 
@@ -183,7 +179,7 @@ draft (writing-ecosystem) — JA 正本は content repo の note/ に置き、no
   → translate (prose-translation) — note 正本から EN 版を作る（Substack は EN チャンネル）
   → substack-publishing ←ここ
       ├ MD→HTML 変換 → Substack に貼る（Title / Subtitle / body 分け）
-      ├ タグ spine + カバー画像プロンプト
+      ├ タグ spine + カバー画像（cover-art）
       └ content repo の substack/ へミラー + research repo から cross-link
 ```
 
