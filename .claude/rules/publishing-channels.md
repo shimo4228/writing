@@ -11,8 +11,8 @@ register、レビューの構成、機械検査、platform 形式、公開 hando
 |---|---|---|---|---|---|---|---|
 | Zenn | `articles/*.md` | 検索・feedから来たengineerが、数秒で用途を理解し再現または判断できる | 日本語ですます。直接指示・具体観察・判断則を優先し、修辞疑問で結論を弱めない。結論の決め台詞を常体で置くのは著者の意図的ブレイクとして許容し、reviewerはCRITICALにしない | 観点別 5 本 | `npm run validate`; `npm run evidence -- articles/<slug>.md`（deviations 0。公開直前は`--online`も）; brief の Figure plan が本文と一致（人手） | 原則50字以内、正確さに必要なら60字まで。em dash（——）連結不可 | `zenn-format` → `publish-article` |
 | Dev.to | `articles-en/*.md` | 英語圏のengineerが同じ成果を再現または判断できる | Natural English。direct、practical、outcome-first。essayistic hedgeへ寄せない | 観点別 5 本 | `devto-translator` self-check; `devto_crosspost.py post <slug> --dry-run` | local上限なし。検索/フィードは原稿の性質で選ぶ | `devto-translator` → `publish-article` |
-| note | `note/*.md` | 読者が、一つの問いを自分の問題として考えられる | 日本語ですます、発見調。評価は問いへ開けるが事実は断定する | 観点別 5 本 | 新規稿はfrontmatterなし | platform上限なし。feedで問いと対象が分かる。feedのカードで見えるのはPCで約33字・モバイルで約30字（2026-10-01 著者観測）なので、対象語と問いは先頭30字に置く | `note-publishing` |
-| Substack | `substack/*.md` | 英語圏の一般読者がJA正本と同じ問いを追える | Natural English、discovery tone。JA正本の確度を保つ | 観点別 5 本 | 新規稿はfrontmatterなし; `prose-translation`後のレビュー完了 | title/subtitleを分ける | `substack-publishing` |
+| note | `note/*.md` | 読者が、一つの問いを自分の問題として考えられる | 日本語ですます、発見調。評価は問いへ開けるが事実は断定する | 観点別 5 本 | 新規稿はfrontmatterなし; brief の Figure plan が本文と一致（人手） | platform上限なし。feedで問いと対象が分かる。feedのカードで見えるのはPCで約33字・モバイルで約30字（2026-10-01 著者観測）なので、対象語と問いは先頭30字に置く | `note-publishing` |
+| Substack | `substack/*.md` | 英語圏の一般読者がJA正本と同じ問いを追える | Natural English、discovery tone。JA正本の確度を保つ | 観点別 5 本 | 新規稿はfrontmatterなし; `prose-translation`後のレビュー完了; 図は英語版でJA稿と同じ位置 | title/subtitleを分ける | `substack-publishing` |
 
 path がどの行にも一致しない、または複数行に一致する場合、`writing-ecosystem` と
 `quality-gate` は推測せず BLOCKED を返す。
@@ -123,6 +123,8 @@ Zennの記事ページはhubへのリンクを`<a href>`として持たない（
 - note初出のJA正本は`note/<slug>.md`。Zennからの原文転載は`articles/<slug>.md`が正本で、`note/<slug>.md`は転載版。ENは`prose-translation`で`substack/<slug>-en.md`へ訳す
 - 新規稿はfrontmatterなし。既存の旧mirrorは変更しない
 - note は `note-publishing`、Substack は `substack-publishing` のHTML paste手順を使う
+- 図は順に組み上がるGIF。決まりと手順は `writing-ecosystem/references/essay-figures.md`。SVGは `figures/<slug>-<what>.svg`（ENは `-en.svg`）、
+  GIFは `images/<slug>-<what>.gif`（ENは `-en.gif`）、作る道具は `scripts/animate_figure.py`
 - 公開後は`scripts/corpus.yml`を更新し、`npm run generate:index`
 
 ## Related

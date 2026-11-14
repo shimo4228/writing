@@ -40,6 +40,35 @@ uv run --project scripts python scripts/note_publish.py prepare articles/SLUG.md
 `images/covers/<slug>-note.png`。アップロードは下の画面操作 6、著者が自分で貼る場合は
 エディターの「画像を追加」から同じファイルを選ぶ。
 
+## 本文の図（GIF）
+
+図の決まりと作り方は `.claude/skills/writing-ecosystem/references/essay-figures.md` が持つ。note の本文は GIF を
+そのまま受け取り、`assets.st-note.com` に `.gif` で置く（2026-11-15 実測、350〜670KB の 3 枚）。入れるのは
+下の画面操作 5 の読み戻しが通った後、見出し画像の前後どちらでもよい。
+
+1. 図の alt と path の行（`![…](/images/<slug>-<what>.gif)`）を足した原稿で prepare をやり直す。
+   manifest の `expected.images` が図の枚数になる
+2. エディターで、アップロード中の通知を記録に差し替える。note はアップロード中に自動保存が走ると
+   `alert("画像アップロード中です")` を出し、閉じるまで拡張機能からの操作と画面取得がすべて止まる
+
+   ```js
+   window.__alerts = []; window.alert = (m) => { window.__alerts.push(m); };
+   ```
+
+3. 画面操作 6 と同じ click の捕捉を入れる
+4. 図ごとに、対応する段落の最後の行の右側をクリックしてカーソルを段落の末尾に置き、その行の左に出る「+」→
+   「画像」を押す。捕捉された `input[type=file]`（id `note-editor-image-upload-input`）へ file_upload で GIF を
+   投入する。図は段落の直後に `<figure>` として入る。空行を作ろうとして Return を送ると段落の中に改行が入るので、
+   行は作らず「+」から入れる
+5. `img` の `src` が `assets.st-note.com` に変わるまで待ってから次の図へ進む（1 枚 10〜20 秒）。キャプションは空のままにする
+   （書くと読み戻しの本文が原稿と一致しなくなる）
+6. 「下書き保存」→ 画面操作 5 の読み戻し。body / links / headings が一致し、images は枚数が一致すれば通す
+   （`src` は原稿の path から note の URL に変わるので、verify の `mismatch` に images が出る）
+
+body.html の `<img>` を本文ごと貼ったときにエディターがどう扱うかは確かめていない（2026-11-15 は図の無い本文を
+貼った下書きに図を足した）。本文を貼った直後にエディター内の `img` を数え、0 でなければ貼られた要素を消してから
+上の手順で入れる。
+
 ## ハッシュタグ
 
 タグは受信指標で変えてよい範囲にあり、本文は変えない（執筆の背骨、ADR-0001）。orchestrator は
@@ -145,6 +174,7 @@ Chrome の許可プロンプトで JS 実行が 45 秒タイムアウトにな�
    の hex を decode して observed-body.html に書き、`note_publish.py verify` を直接呼ぶ。
 
    body / links / headings / images が一致し、structure の差が em / code だけなら続行。
+   本文に図がある稿の images は「本文の図」の 6 で読む。
 6. 見出し画像。「画像を追加」→「画像をアップロード」は DOM に無い file input を動的に
    作って `.click()` するので、先に click を捕捉して input を DOM に残す。
 

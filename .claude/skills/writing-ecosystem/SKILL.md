@@ -150,10 +150,11 @@ Codex が使えないときは Claude で代替せず、処分記録に「別系
 GO の時点で、通読の指摘数と、そのうちレビューが先に挙げていたのに orchestrator が処分で落とした件数を
 [`evals/read-through-log.md`](evals/read-through-log.md) に 1 行足す（全 channel。下の処分規律の「処分の偏りを見張る」）。
 
-図は内容 GO の後に起こす（brief の Figure plan をここで埋める。形の選び方と手順は project の format skill — Zenn は `zenn-format` の Figures。
+図は内容 GO の後に起こす（brief の Figure plan をここで埋める。形の選び方と手順は channel ごとに決まる — Zenn は `zenn-format` の Figures、
+note / Substack のエッセイは [`references/essay-figures.md`](references/essay-figures.md) の動く図。
 図の規約を持たない channel では Figure plan は「なし」と書く）。
-図の文字と本文の差分だけを `fact-checker` に回し、図を足した稿は著者がもう一度通読する。図と
-その直後の 1 文の追加は構造変更ではないので、この通読は確認であり、内容 GO とタイトル選択は
+図の文字と本文の差分だけを `fact-checker` に回し、図を足した稿は著者がもう一度通読する。図と、
+それに添える alt や直後の 1 文の追加は構造変更ではないので、この通読は確認であり、内容 GO とタイトル選択は
 やり直さない。
 
 #### 指摘の処分規律

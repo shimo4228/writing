@@ -79,14 +79,28 @@ osascript -e "set the clipboard to «data HTML${hex}»"
   - ページ内 JS から `fetch("http://127.0.0.1:…")` → https ページからの localhost fetch は Chrome の Private Network Access に塞がれハング
   - 素の Markdown 貼り付け → §1 の通り変換されない
 
-### 画像も同じ経路
+### 画像と本文の図 — ツールバーから file input へ投入する
 
-```bash
-osascript -e 'set the clipboard to (read (POSIX file "/path/cover.png") as «class PNGf»)'
-# → 本文カーソル位置で cmd+V（アップロードは自動）
+カバー画像も本文の図（GIF）も、ツールバーの「画像」→「画像」から入れる。このメニューは DOM に無い file input を
+動的に作って `.click()` するので、先に click を捕捉して input を残す。
+
+```js
+const click = HTMLInputElement.prototype.click;
+HTMLInputElement.prototype.click = function () { if (this.type !== 'file') return click.call(this); this.style.display = 'none'; if (!this.isConnected) document.body.appendChild(this); window.__lastFileInput = this; };
 ```
 
-本文冒頭に挿入した画像はソーシャルプレビュー（カバー）に自動反映される。`file_upload` tool は本文画像には使いにくい（対応する `input[type=file]` が動的生成のため）。チャット添付画像はディスクに存在しないので、ユーザーにファイルとして保存してもらいセッション共有パスへコピーする。
+1. 入れたい位置の段落の最後の行の右側をクリックして、カーソルを段落の末尾に置く（カバーは本文の先頭）
+2. ツールバーの「画像」→ メニューの「画像」を押し、捕捉された input（`window.__lastFileInput`）へ file_upload で投入する
+3. `img` の `src` が `substackcdn.com` に変わり、左上が「保存済み」になるのを待ってから次へ進む。画像は段落の直後に入る
+
+GIF は GIF のまま置かれて動く（2026-11-15 実測、450〜750KB の 3 枚。予約済みの投稿に足しても予約は保たれた）。
+本文の図の決まりと作り方は `.claude/skills/writing-ecosystem/references/essay-figures.md` が持ち、Substack には英語版（`-en.gif`）を入れる。
+
+クリップボードに PNG を載せて cmd+V する経路は、画像が base64 の data URL のまま本文に残り、「Your post is too long」で
+保存に失敗する（2026-11-14 実測）。その状態になったら画像を選択して Backspace で消し、上の手順で入れ直す。
+
+本文冒頭に挿入した画像はソーシャルプレビュー（カバー）に自動反映される。チャット添付画像はディスクに存在しないので、
+ユーザーにファイルとして保存してもらいセッション共有パスへコピーする。
 
 ### フィールド・タグ・公開フロー
 
