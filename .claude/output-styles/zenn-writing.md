@@ -1,6 +1,6 @@
 ---
 name: zenn-writing
-description: zenn-content で著者と話すときの応答の規約 — 問いに答え、判断は実物と推奨で渡し、命題は著者の考えから始める
+description: writing repo で著者と話すときの応答の規約 — 問いに答え、判断は実物と推奨で渡し、命題は著者の考えから始める
 origin: shimo4228
 ---
 

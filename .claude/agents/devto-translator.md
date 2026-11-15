@@ -67,7 +67,7 @@ EN 稿が参照する図は英語版の PNG にする（`devto_crosspost.py` は
 
 1. `images/covers/{slug}.png` が既に存在するか確認する
 2. 存在しない場合は**手動生成を促す**（Gemini 等でユニークな画像を作り `images/covers/{slug}.png` に置く）。カバーなしでも投稿は可能
-3. 画像がある場合のカバー URL: `https://raw.githubusercontent.com/shimo4228/zenn-content/main/images/covers/{slug}.png`（`post` 実行時にファイルが存在すれば自動参照される）
+3. 画像がある場合のカバー URL: `https://raw.githubusercontent.com/shimo4228/writing/main/images/covers/{slug}.png`（`post` 実行時にファイルが存在すれば自動参照される）
 
 ### Phase 4: セルフチェック
 

@@ -25,7 +25,7 @@ Claude Code と Codex の**親セッション**を実プロジェクト横断で
 最初に低コストなカタログを作る。
 
 ```bash
-uv run --directory ~/MyAI_Lab/zenn-content/.claude/skills/session-theme-mining \
+uv run --directory ~/MyAI_Lab/writing/.claude/skills/session-theme-mining \
   python -m scripts.session_catalog catalog
 ```
 
@@ -65,7 +65,7 @@ verbatim の anchor として置く。assistant の要約だけから候補を�
 候補に関係する raw path だけを詳しく読む。
 
 ```bash
-uv run --directory ~/MyAI_Lab/zenn-content/.claude/skills/session-theme-mining \
+uv run --directory ~/MyAI_Lab/writing/.claude/skills/session-theme-mining \
   python -m scripts.session_catalog trace <raw-path> [<raw-path> ...]
 ```
 
@@ -98,7 +98,7 @@ timestamp 不明の turn を安全側で除外する。
 の schema で scratch file に作る。
 
 ```bash
-uv run --directory ~/MyAI_Lab/zenn-content/.claude/skills/session-theme-mining \
+uv run --directory ~/MyAI_Lab/writing/.claude/skills/session-theme-mining \
   python -m scripts.session_catalog history-record --input <candidate-json>
 ```
 

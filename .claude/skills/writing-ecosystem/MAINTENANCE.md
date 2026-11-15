@@ -86,7 +86,7 @@
 ## 著者の指摘の記録（処分規律の「著者の指摘を積む」「著者の撤回」「commit へ写す」）
 
 - 出所: 著者の指摘が会話の中で消え、公開物から辿れなかった（harness RFC-0027）。commit を一次記録にする案が harness RFC-0028。
-  2026-09-28〜10-12 に zenn-content の rule `.claude/rules/correction-trailers.md`（commit `76bcf5b`）で試した。試行中は
+  2026-09-28〜10-12 に writing repo の rule `.claude/rules/correction-trailers.md`（commit `76bcf5b`）で試した。試行中は
   公開 skill repo へ同期される本 skill を変えなかったので、rule として置いた
 - 試行の読み（数えた値と判断の正本は harness RFC-0028 の Status）: triage 2026-10-18 に判断役が数え、`drafts/*.corrections.md`
   7 本に 137 件、試行期間の commit 本文に `指摘:` ブロック 122 件（22 commit）。原文の「」181 個を session ログと照合し、著者の発言に

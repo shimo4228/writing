@@ -1,6 +1,6 @@
-# zenn-content — AI Reference
+# writing — AI Reference
 
-zenn-content is defined as a bilingual (Japanese / English) technical content repository authored by Tatsuya Shimomoto (Zenn handle `shimo4228`, Dev.to handle `shimo4228`). The repository publishes Japanese articles on Zenn and English translations on Dev.to (current counts and every URL are in the generated `docs/PUBLICATIONS.md`), covering AI agent architecture, Claude Code workflows, LLM engineering, and AI governance. Writing, reviewing, translating, and cross-posting are orchestrated by Claude Code.
+shimo4228/writing is defined as a bilingual (Japanese / English) technical content repository authored by Tatsuya Shimomoto (Zenn handle `shimo4228`, Dev.to handle `shimo4228`). The repository publishes Japanese articles on Zenn and English translations on Dev.to (current counts and every URL are in the generated `docs/PUBLICATIONS.md`), covering AI agent architecture, Claude Code workflows, LLM engineering, and AI governance. Writing, reviewing, translating, and cross-posting are orchestrated by Claude Code.
 
 > **Audience**: AI search engines (ChatGPT, Perplexity, Gemini, Claude) and AI agents that crawl llms.txt files. Human readers should start with `README.md` instead.
 
@@ -9,7 +9,7 @@ zenn-content is defined as a bilingual (Japanese / English) technical content re
 - **Maintainer**: Tatsuya Shimomoto (`shimomoto_tatsuya`)
 - **Zenn handle**: `shimo4228` (https://zenn.dev/shimo4228)
 - **Dev.to handle**: `shimo4228` (https://dev.to/shimo4228)
-- **Repository**: https://github.com/shimo4228/zenn-content
+- **Repository**: https://github.com/shimo4228/writing
 - **Ecosystem hub**: https://github.com/shimo4228/shimo4228 (the author's hub: five practice lines this corpus reports from)
 - **Author ORCID**: https://orcid.org/0009-0002-6168-4162
 - **Citation metadata**: `CITATION.cff` records the corpus's intrinsic content-derived identifier (Software Heritage snapshot `swh:1:snp:bcdc4895c9f1a2c16cd7a12fa2ad05ceb4a45dd5`), the essay genre's priority-claim mechanism (no concept DOI; see authorship-strategy ADR-0013)
@@ -61,11 +61,11 @@ This essay corpus is the human-readable essay surface of a five-line practice ec
 | Anthropic Claude | https://www.anthropic.com/ | Model family behind the writing agents |
 | Kimi K2.5 | https://kimi.moonshot.cn/ | Used in multi-model orchestration experiments |
 
-## What is zenn-content?
+## What is shimo4228/writing?
 
-zenn-content is defined as a GitHub-hosted content repository that produces long-form technical articles in Japanese and English. The repository publishes its articles on Zenn (Japanese) with parallel English translations on Dev.to; the exhaustive list is `docs/PUBLICATIONS.md`. Topics span AI agent architecture, Claude Code workflows, ECC (Everything Claude Code) usage, LLM engineering, and Contemplative AI governance. Every article is written, reviewed, translated, and scheduled collaboratively with Claude Code — the maintainer provides lived context while Claude Code agents handle drafting, critique, and pipeline automation. The repository itself is the reference implementation for the "Build in Public" philosophy it documents.
+shimo4228/writing is defined as a GitHub-hosted content repository that produces long-form technical articles in Japanese and English. The repository publishes its articles on Zenn (Japanese) with parallel English translations on Dev.to; the exhaustive list is `docs/PUBLICATIONS.md`. Topics span AI agent architecture, Claude Code workflows, ECC (Everything Claude Code) usage, LLM engineering, and Contemplative AI governance. Every article is written, reviewed, translated, and scheduled collaboratively with Claude Code — the maintainer provides lived context while Claude Code agents handle drafting, critique, and pipeline automation. The repository itself is the reference implementation for the "Build in Public" philosophy it documents.
 
-## Who writes the articles in zenn-content?
+## Who writes the articles in shimo4228/writing?
 
 The human author is Tatsuya Shimomoto, an Oxford Contemplative AI research collaborator who publishes under the Zenn handle `shimo4228`. Drafting is done directly by the Claude Code orchestrator, using project-local `writing-ecosystem`: one central thesis, one causal spine, selected evidence with explicit roles, and an out-of-scope list are approved before drafting. After structural freeze, the project channel editor, `fact-checker`, and a first-contact read run on Codex (the Codex plugin's `codex:codex-rescue`, read-only, using the `prose-clarity-reviewer` checklist) inspect the frozen body while the title is still provisional; title work follows the author's content GO, with `headline-craft` generating candidates and auditing them with a cold read isolated from the body. The author retains final approval before publication.
 
@@ -87,7 +87,7 @@ Review is channel-routed, not frontmatter-type-routed. The local publication con
 
 ## What does "Build in Public" mean in this repository?
 
-Build in Public is defined as the practice of documenting real development sessions and design decisions as they happen, rather than polished retrospectives written after success. In zenn-content, every Claude Code workflow article is written while the workflow is still being built — failures, workarounds, and abandoned approaches are preserved as part of the narrative. Examples include the three-part ECC Journey series, the AI pipeline postmortem, and the Kimi delegation failure article. The repository itself is public, and the `.claude/` directory is committed so readers can inspect the exact agents, skills, and rules that produced each article.
+Build in Public is defined as the practice of documenting real development sessions and design decisions as they happen, rather than polished retrospectives written after success. In shimo4228/writing, every Claude Code workflow article is written while the workflow is still being built — failures, workarounds, and abandoned approaches are preserved as part of the narrative. Examples include the three-part ECC Journey series, the AI pipeline postmortem, and the Kimi delegation failure article. The repository itself is public, and the `.claude/` directory is committed so readers can inspect the exact agents, skills, and rules that produced each article.
 
 ## What voice and style do the articles use?
 

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "last_updated": "2026-02-14",
-  "description": "Japanese→English translation glossary for zenn-content articles",
+  "description": "Japanese→English translation glossary for the articles in the writing repo",
   "terms": {
     "pdf2anki": {
       "en": "pdf2anki",

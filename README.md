@@ -1,6 +1,6 @@
 Language: English | [日本語](README.ja.md)
 
-# zenn-content
+# writing
 
 Japanese and English writing by Tatsuya Shimomoto (shimo4228) on coding agents, for engineers who build and run them: how they remember, how they fail, how to review them without drowning in review, and how to keep them accountable. The articles report what happened in one author's real development sessions, and every article's Markdown source is in this repository.
 
@@ -85,14 +85,14 @@ All content — articles, translations, and tooling — is [CC0 1.0](LICENSE) (p
 
 ## For coding agents
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/zenn-content)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/writing)
 
 Start with [llms.txt](llms.txt) (navigator) and [llms-full.txt](llms-full.txt) (self-contained Q&A). The Markdown sources here are the canonical text of the articles; the platforms are copies.
 
 <details>
 <summary>For tools and AI assistants</summary>
 
-zenn-content is the Markdown source repository of Tatsuya Shimomoto's (shimo4228) Japanese and English articles and essays on coding agents, published on Zenn, Dev.to, note and Substack, for engineers who build and run coding agents; it also holds the writing harness and the scripts that publish and index them.
+writing is the Markdown source repository of Tatsuya Shimomoto's (shimo4228) Japanese and English articles and essays on coding agents, published on Zenn, Dev.to, note and Substack, for engineers who build and run coding agents; it also holds the writing harness and the scripts that publish and index them.
 
 It exists so that the text does not depend on any publishing platform staying available: the Markdown sources here are canonical for the articles, the platforms are copies, and the repository is public under CC0. A few idea essays in `note/` and `substack/` are mirrors whose canonical text lives in the author's [attention-not-self](https://github.com/shimo4228/attention-not-self) repository, and other files in `note/` are verbatim note reposts of Zenn articles whose canonical stays in `articles/`.
 

@@ -9,7 +9,7 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-LABEL="com.shimo4228.zenn-content.note-daily"
+LABEL="com.shimo4228.writing.note-daily"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
 DB="${NOTE_DAILY_DB:-$REPO/.notes/note-publishing/queue.sqlite}"
 RUNS="$REPO/.notes/note-publishing/runs"

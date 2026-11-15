@@ -1,6 +1,6 @@
 Language: [English](README.md) | 日本語
 
-# zenn-content
+# writing
 
 Tatsuya Shimomoto（shimo4228）が、コーディングエージェントを作り、動かすエンジニアに向けて書いた日英の文章です。エージェントがどう記憶し、どう失敗し、レビューに溺れずにどう評価し、どう説明責任を持たせるかを書いています。記事は、一人の著者の実際の開発セッションで起きたことを報告するもので、全記事の Markdown 原稿がこのリポジトリにあります。
 
@@ -85,14 +85,14 @@ npm run check:index                # 索引か読書経路が古ければ失敗�
 
 ## コーディングエージェント向け
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/zenn-content)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/writing)
 
 [llms.txt](llms.txt)（ナビゲータ）と [llms-full.txt](llms-full.txt)（自己完結の Q&A）から読んでください。記事の正本はここにある Markdown で、各プラットフォームはその写しです。
 
 <details>
 <summary>ツールと AI アシスタント向けの資料</summary>
 
-zenn-content は、Tatsuya Shimomoto（shimo4228）がコーディングエージェントを作り、動かすエンジニアに向けて書いた日英の記事とエッセイ（Zenn・Dev.to・note・Substack に公開）の Markdown 原稿を置くリポジトリです。原稿を書き、レビューし、公開し、索引にする執筆ハーネスとスクリプトも同じ場所にあります。
+writing は、Tatsuya Shimomoto（shimo4228）がコーディングエージェントを作り、動かすエンジニアに向けて書いた日英の記事とエッセイ（Zenn・Dev.to・note・Substack に公開）の Markdown 原稿を置くリポジトリです。原稿を書き、レビューし、公開し、索引にする執筆ハーネスとスクリプトも同じ場所にあります。
 
 このリポジトリがあるのは、文章が特定の公開プラットフォームの存続に依存しないようにするためです。記事の正本はここにある Markdown で、各プラットフォームはその写しです。`note/` と `substack/` の一部のアイデアエッセイは、正本を著者の [attention-not-self](https://github.com/shimo4228/attention-not-self) リポジトリに置くミラーです。`note/` のほかのファイルには Zenn 記事を note へそのまま転載した写しもあり、その正本は `articles/` にあります。リポジトリは CC0 で公開しています。
 

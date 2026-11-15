@@ -1,5 +1,5 @@
 {
-  "name": "zenn-content",
+  "name": "writing",
   "version": "1.0.0",
   "description": "Zenn/Dev.to articles, note/Substack essays, and the writing harness behind them",
   "private": true,

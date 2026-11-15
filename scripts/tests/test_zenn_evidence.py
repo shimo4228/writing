@@ -14,7 +14,8 @@ import pytest
 
 import zenn_evidence as ze
 
-CANONICAL = "https://github.com/shimo4228/zenn-content/blob/main/articles"
+CANONICAL = "https://github.com/shimo4228/writing/blob/main/articles"
+FORMER_CANONICAL = "https://github.com/shimo4228/zenn-content/blob/main/articles"
 DISCLOSURE = (
     "\n---\n\n**この記事の書き方**: 本文は Claude（Claude Code）が書きました。"
     "素材は私の計測ログと、私との対話です。内容の責任は私が負います。\n"
@@ -219,6 +220,17 @@ def test_canonical_link_must_match_own_slug(repo: Path) -> None:
     assert "canonical-link-missing" in rules(result)
     found = next(d for d in result["deviations"] if d["rule"] == "canonical-link-missing")
     assert found["found_slugs"] == ["other-article"]
+
+
+def test_canonical_link_with_the_former_repo_name_passes(repo: Path) -> None:
+    """Articles published before the rename keep the former URL; GitHub redirects it."""
+    related = (
+        "\n## 関連リンク\n\n"
+        f"- [正本]({FORMER_CANONICAL}/sample.md)\n"
+        "- [著者のGitHub](https://github.com/shimo4228)\n"
+    )
+    p = write(repo, "sample", article(related=related))
+    assert "canonical-link-missing" not in rules(ze.evaluate(p, repo))
 
 
 def test_author_hub_missing(repo: Path) -> None:

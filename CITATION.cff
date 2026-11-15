@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you cite or reuse this essay corpus, please cite it as below."
 type: dataset
-title: "zenn-content: A Bilingual Essay Corpus on AI Agent Design, Coding-Agent Workflows, and Authorship Under AI-Mediated Diffusion"
+title: "writing: A Bilingual Essay Corpus on AI Agent Design, Coding-Agent Workflows, and Authorship Under AI-Mediated Diffusion"
 date-released: 2026-06-25
 license: CC0-1.0
-repository-code: "https://github.com/shimo4228/zenn-content"
-url: "https://github.com/shimo4228/zenn-content"
+repository-code: "https://github.com/shimo4228/writing"
+url: "https://github.com/shimo4228/writing"
 identifiers:
   - type: swh
     value: "swh:1:snp:bcdc4895c9f1a2c16cd7a12fa2ad05ceb4a45dd5"

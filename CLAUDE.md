@@ -1,4 +1,4 @@
-# Claude Code Instructions for zenn-content
+# Claude Code Instructions for the writing repo
 
 ## Project Overview
 
@@ -23,7 +23,7 @@ review agents `review-structure` / `review-certainty` / `review-explanation` / `
 `fact-checker` and the skills `quality-gate` / `session-theme-mining` live in `.claude/` too).
 The author's writing values and principles live only in `.claude/rules/writing-principles.md` (the backbone).
 Platform and repository values live only in `.claude/rules/publishing-channels.md`.
-For article work in another repository, add this repo with `claude --add-dir ~/MyAI_Lab/zenn-content`
+For article work in another repository, add this repo with `claude --add-dir ~/MyAI_Lab/writing`
 or start the session here.
 
 Do not restate the backbone or the shared flow here. `writing-ecosystem` owns the procedure: the editorial

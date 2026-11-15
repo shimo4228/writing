@@ -44,7 +44,7 @@ LOG_PATH = SCRIPT_DIR / "devto_crosspost.log"
 LAUNCH_AGENTS_DIR = Path.home() / "Library" / "LaunchAgents"
 
 DEVTO_API_BASE = "https://dev.to/api"
-GITHUB_RAW_BASE = "https://raw.githubusercontent.com/shimo4228/zenn-content/main/images"
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/shimo4228/writing/main/images"
 AGENT_PREFIX = "dev.shimo4228.devto-"
 
 logger = logging.getLogger(__name__)

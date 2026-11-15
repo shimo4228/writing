@@ -42,7 +42,10 @@ import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
-CANONICAL_REPO = "https://github.com/shimo4228/zenn-content"
+CANONICAL_REPO = "https://github.com/shimo4228/writing"
+# The repository was renamed on 2026-11-15. Articles published before that keep the former URL in their
+# related-links section (GitHub redirects it; rewriting them would re-sync every article), so both pass.
+CANONICAL_REPOS = (CANONICAL_REPO, "https://github.com/shimo4228/zenn-content")
 AUTHOR_HUB = "https://github.com/shimo4228"
 
 # Contract: 原則 50 字以内、正確さに必要なら 60 字まで
@@ -258,8 +261,10 @@ def check_links(a: Article, root: Path, dev: list, info: dict) -> None:
         return
 
     canonical = f"{CANONICAL_REPO}/blob/main/articles/{a.slug}.md"
-    if canonical not in section:
-        wrong = re.findall(rf"{re.escape(CANONICAL_REPO)}/blob/main/articles/([a-z0-9-]+)\.md", section)
+    accepted = [f"{repo}/blob/main/articles/{a.slug}.md" for repo in CANONICAL_REPOS]
+    if not any(url in section for url in accepted):
+        repos = "|".join(re.escape(repo) for repo in CANONICAL_REPOS)
+        wrong = re.findall(rf"(?:{repos})/blob/main/articles/([a-z0-9-]+)\.md", section)
         dev.append({"rule": "canonical-link-missing", "expected": canonical, "found_slugs": wrong})
 
     if not re.search(rf"{re.escape(AUTHOR_HUB)}(?![/\w])", section):

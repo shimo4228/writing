@@ -1,7 +1,7 @@
 <!-- origin: shimo4228 -->
 # Publishing Channel Contract
 
-このファイルは zenn-content の媒体固有の値だけを持つ。著者の方針と執筆の原理は `.claude/rules/writing-principles.md`、
+このファイルは writing repo の媒体固有の値だけを持つ。著者の方針と執筆の原理は `.claude/rules/writing-principles.md`、
 執筆手順は project-local `writing-ecosystem`、タイトルの候補と点検は `headline-craft` が持つ。ここには path、読者との約束、
 register、レビューの構成、機械検査、platform 形式、公開 handoff だけを置く。
 
@@ -82,7 +82,7 @@ Zenn / Dev.toの全稿は、末尾の関連link節に次の2行を含める。�
 遡及しない。
 
 ```
-- [この記事のMarkdown正本（GitHub）](https://github.com/shimo4228/zenn-content/blob/main/articles/<slug>.md) — 全記事のMarkdownと索引（docs/PUBLICATIONS.md）は同じリポジトリにあります
+- [この記事のMarkdown正本（GitHub）](https://github.com/shimo4228/writing/blob/main/articles/<slug>.md) — 全記事のMarkdownと索引（docs/PUBLICATIONS.md）は同じリポジトリにあります
 - [著者のGitHub](https://github.com/shimo4228) — DOI 付きの研究リポジトリ一覧
 ```
 

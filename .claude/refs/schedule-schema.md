@@ -28,7 +28,7 @@
   "file": "articles-en/example-article.md",
   "devto": null,
   "devto_tags": ["ai", "programming", "discuss"],
-  "cover_image": "https://raw.githubusercontent.com/shimo4228/zenn-content/main/images/covers/example-article.png",
+  "cover_image": "https://raw.githubusercontent.com/shimo4228/writing/main/images/covers/example-article.png",
   "notes": "EN translation of 記事タイトル"
 }
 ```

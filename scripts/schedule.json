@@ -387,7 +387,7 @@
         "font",
         "typography"
       ],
-      "cover_image": "https://raw.githubusercontent.com/shimo4228/zenn-content/main/images/covers/zed-observation-window-japanese-typography.png",
+      "cover_image": "https://raw.githubusercontent.com/shimo4228/writing/main/images/covers/zed-observation-window-japanese-typography.png",
       "notes": "EN translation of Zed を観測窓として構築する — IBM Plex 日本語タイポグラフィ"
     },
     {
@@ -454,7 +454,7 @@
         "claudecode",
         "skills"
       ],
-      "cover_image": "https://raw.githubusercontent.com/shimo4228/zenn-content/main/images/covers/codex-review-cross-model-decorrelation.png",
+      "cover_image": "https://raw.githubusercontent.com/shimo4228/writing/main/images/covers/codex-review-cross-model-decorrelation.png",
       "notes": "EN translation of Claude Codeから簡単にCodexレビューさせるスキルを作った"
     },
     {
@@ -467,7 +467,7 @@
         "devtools",
         "githubactions"
       ],
-      "cover_image": "https://raw.githubusercontent.com/shimo4228/zenn-content/main/images/covers/non-code-asset-value-stocktake.png",
+      "cover_image": "https://raw.githubusercontent.com/shimo4228/writing/main/images/covers/non-code-asset-value-stocktake.png",
       "notes": "EN translation of 非コード資産の「価値」は linter では測れない — LLM で棚卸しするスキルを作った"
     },
     {

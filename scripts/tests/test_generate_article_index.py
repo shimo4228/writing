@@ -9,8 +9,8 @@ import pytest
 
 import generate_article_index as gai
 
-README_EN = "# zenn-content\n\nintro\n\n<!-- reading-paths:start -->\nold\n<!-- reading-paths:end -->\n\ntail\n"
-README_JA = "# zenn-content\n\n導入\n\n<!-- reading-paths:start -->\n古い\n<!-- reading-paths:end -->\n\n末尾\n"
+README_EN = "# writing\n\nintro\n\n<!-- reading-paths:start -->\nold\n<!-- reading-paths:end -->\n\ntail\n"
+README_JA = "# writing\n\n導入\n\n<!-- reading-paths:start -->\n古い\n<!-- reading-paths:end -->\n\n末尾\n"
 
 
 def _article(title: str, published: bool = True, published_at: str | None = "2026-08-01 09:00", topics=("ai",)) -> str:
@@ -194,7 +194,7 @@ def test_render_routes_rejects_unknown_slug(repo: Path):
 
 def test_splice_replaces_only_marker_block():
     out = gai.splice(README_EN, f"{gai.START}\nnew\n{gai.END}")
-    assert out == "# zenn-content\n\nintro\n\n<!-- reading-paths:start -->\nnew\n<!-- reading-paths:end -->\n\ntail\n"
+    assert out == "# writing\n\nintro\n\n<!-- reading-paths:start -->\nnew\n<!-- reading-paths:end -->\n\ntail\n"
 
 
 def test_splice_requires_exactly_one_marker_pair():

@@ -11,7 +11,7 @@ origin: shimo4228
 人間読者向けコンテンツ（記事・エッセイ・ブログポスト・ニュースレター）を書く手順と、関わる skill・agent の
 役割分担の正本。
 
-**書き始める前に `~/MyAI_Lab/zenn-content/.claude/rules/writing-principles.md`（執筆の背骨: 著者の方針と原理 6 本）を読む。**
+**書き始める前に `~/MyAI_Lab/writing/.claude/rules/writing-principles.md`（執筆の背骨: 著者の方針と原理 6 本）を読む。**
 この repo で作業していれば rules として常駐しているが、別 repo からの `--add-dir` や他 skill からの参照では載っていない。
 判断は背骨から導き、本 skill は手順・役割・受け入れの規律だけを持つ。
 
@@ -178,7 +178,7 @@ note / Substack のエッセイは [`references/essay-figures.md`](references/es
   複数箇所を変えたら原文は 1 回で対象を並べる。ここに積むのは著者の指摘で、reviewer と機械の指摘は上の処分記録が持つ
 - **著者の撤回**: 著者が反映を却下・撤回した件は、その件に撤回と書いて残す
 - **commit へ写す**: その変更を含む記事の commit 本文に、積んだ件を 1 件 1 ブロック（`指摘:` 原文 / `Trigger:` / `Expect:`）で
-  `Context:` / `Decision:` / `Review-when:` の後ろに写す。写す前に project の公開安全規約（zenn-content は CLAUDE.md の
+  `Context:` / `Decision:` / `Review-when:` の後ろに写す。写す前に project の公開安全規約（writing repo は CLAUDE.md の
   Public-repository safety）を原文にも当て、個人のパス・秘密・第三者の非公開情報を `[略]` にし、何を伏せたかを同じ行に書く。
   修正前後の抜粋は `drafts/` にだけ置く。写し終えた件には `drafts/` 側に commit の SHA を書き足す。雛形は
   [`references/author-corrections.md`](references/author-corrections.md)

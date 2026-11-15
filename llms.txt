@@ -1,4 +1,4 @@
-# zenn-content
+# writing
 
 > Japanese and English writing by Tatsuya Shimomoto (shimo4228) on coding agents — how they remember, fail, get reviewed, and stay accountable — plus idea essays and the papers that grew from them. Japanese originals on Zenn, English editions on Dev.to, essays on note (JP) and Substack (EN); the Markdown sources here are canonical. Writing, reviewing, translating, and publishing are done with Claude Code.
 
