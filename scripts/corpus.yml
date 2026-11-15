@@ -4,6 +4,16 @@
 # Zenn/Dev.to articles are NOT listed here — their source of truth is articles/*.md.
 
 essays:
+  - slug: sectarian-dispute-failure-of-buddhism
+    date: 2026-11-15
+    ja:
+      title: 宗派の争いは、仏教の失敗なのか
+      url: https://note.com/sakamaki4228/n/ne1d4a117954e
+      file: note/sectarian-dispute-failure-of-buddhism.md
+    en:
+      title: Is Sectarian Dispute a Failure of Buddhism?
+      url: https://shimo4228.substack.com/p/is-sectarian-dispute-a-failure-of
+      file: substack/sectarian-dispute-failure-of-buddhism-en.md
   - slug: human-eval-final-artifact
     date: 2026-11-14
     ja:
