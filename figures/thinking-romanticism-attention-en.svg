@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs>
+<marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#242321"/></marker>
+<marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C65F38"/></marker>
+</defs>
+<rect width="1200" height="1200" fill="#FAFAF7"/>
+<text x="60" y="95" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#C65F38">Is Not Thinking the Endpoint of Mastery in Meditation?</text>
+<text x="60" y="178" font-family="Noto Serif CJK JP" font-weight="bold" font-size="60" fill="#242321">Breakdown follows attention</text>
+<text x="60" y="275" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">While playing</text>
+<rect x="60" y="305" width="360" height="180" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="240" y="385" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">Cue</text>
+<text x="240" y="448" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">The fingers</text>
+<line x1="432" y1="395" x2="768" y2="395" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<text x="600" y="375" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#242321">Relied on</text>
+<rect x="780" y="305" width="360" height="180" rx="16" fill="#FAFAF7" stroke="#C65F38" stroke-width="7"/>
+<text x="960" y="385" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">Meaning</text>
+<text x="960" y="448" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">The music</text>
+<text x="960" y="540" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="40" fill="#C65F38">Attention here</text>
+<text x="60" y="655" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">Attention turned to the fingers</text>
+<rect x="60" y="685" width="360" height="180" rx="16" fill="#FAFAF7" stroke="#C65F38" stroke-width="7"/>
+<text x="240" y="765" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">Cue</text>
+<text x="240" y="828" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">The fingers</text>
+<rect x="780" y="685" width="360" height="180" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="960" y="765" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">Meaning</text>
+<text x="960" y="828" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="40" fill="#242321">The music</text>
+<line x1="768" y1="775" x2="432" y2="775" stroke="#C65F38" stroke-width="7" marker-end="url(#aa)"/>
+<text x="600" y="755" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="36" fill="#C65F38">Pulled back</text>
+<text x="240" y="920" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="40" fill="#C65F38">Attention here</text>
+<text x="960" y="920" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="40" fill="#C65F38">Playing falls apart</text>
+<text x="600" y="1080" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="44" fill="#242321">What changed: attention, not thought</text>
+</svg>

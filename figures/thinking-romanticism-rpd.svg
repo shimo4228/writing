@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs>
+<marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#242321"/></marker>
+<marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C65F38"/></marker>
+</defs>
+<rect width="1200" height="1200" fill="#FAFAF7"/>
+<text x="60" y="95" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#C65F38">考えないことは、瞑想における熟達の到達点なのか</text>
+<text x="60" y="178" font-family="Noto Serif CJK JP" font-weight="bold" font-size="60" fill="#242321">手は一つ、ただし頭の中で試す</text>
+<rect x="100" y="235" width="780" height="110" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="490" y="305" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="42" fill="#242321">「いつものあの種類だ」と分かる</text>
+<line x1="490" y1="348" x2="490" y2="402" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<rect x="100" y="410" width="780" height="110" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="490" y="480" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="42" fill="#242321">使えそうな手を一つ思いつく</text>
+<line x1="490" y1="523" x2="490" y2="577" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<rect x="100" y="585" width="780" height="110" rx="16" fill="#FAFAF7" stroke="#C65F38" stroke-width="7"/>
+<text x="490" y="655" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="42" fill="#242321">打ったらどう進むか、頭の中でたどる</text>
+<line x1="400" y1="698" x2="210" y2="782" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<line x1="490" y1="698" x2="490" y2="782" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<line x1="580" y1="698" x2="780" y2="782" stroke="#242321" stroke-width="5" marker-end="url(#ai)"/>
+<rect x="60" y="790" width="270" height="160" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="195" y="852" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#242321">うまくいきそう</text>
+<text x="195" y="915" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">実行</text>
+<rect x="355" y="790" width="270" height="160" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="490" y="852" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#242321">少し足りなそう</text>
+<text x="490" y="915" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">手直し</text>
+<rect x="650" y="790" width="270" height="160" rx="16" fill="#FAFAF7" stroke="#242321" stroke-width="5"/>
+<text x="785" y="852" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="36" fill="#242321">だめそう</text>
+<text x="785" y="915" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="500" font-size="46" fill="#242321">次の手</text>
+<line x1="930" y1="240" x2="930" y2="515" stroke="#242321" stroke-width="5"/>
+<text x="960" y="395" font-family="Noto Sans CJK JP" font-weight="bold" font-size="46" fill="#242321">直観</text>
+<line x1="930" y1="590" x2="930" y2="690" stroke="#C65F38" stroke-width="7"/>
+<text x="960" y="622" font-family="Noto Sans CJK JP" font-weight="bold" font-size="36" fill="#C65F38">意識して</text>
+<text x="960" y="676" font-family="Noto Sans CJK JP" font-weight="bold" font-size="46" fill="#C65F38">分析</text>
+<text x="600" y="1080" text-anchor="middle" font-family="Noto Sans CJK JP" font-weight="bold" font-size="46" fill="#242321">比べてはいなくても、考えている</text>
+</svg>

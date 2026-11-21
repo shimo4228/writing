@@ -4,6 +4,16 @@
 # Zenn/Dev.to articles are NOT listed here — their source of truth is articles/*.md.
 
 essays:
+  - slug: thinking-romanticism
+    date: 2026-11-21
+    ja:
+      title: 考えないことは、瞑想における熟達の到達点なのか
+      url: https://note.com/sakamaki4228/n/n6c4dbc045248
+      file: note/thinking-romanticism.md
+    en:
+      title: Is Not Thinking the Endpoint of Mastery in Meditation?
+      url: https://shimo4228.substack.com/p/is-not-thinking-the-endpoint-of-mastery
+      file: substack/thinking-romanticism-en.md
   - slug: sectarian-dispute-failure-of-buddhism
     date: 2026-11-15
     ja:
