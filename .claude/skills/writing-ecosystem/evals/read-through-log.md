@@ -3,10 +3,8 @@
 
 著者の通読が見つけた指摘の数（2026-11-14 から全 channel。それより前は Zenn 稿だけ）。レビューと処分の規律を直すときの主な入力にする。1 行足す時点は `SKILL.md` §4 が持つ。「ペルソナ読み」の欄には読み手のモデルも書く。
 
-比較の基準は「ペルソナ読み: なし」の行。ペルソナ読みを使う前で、panel が今と同じ構成（Codex の初見の読みを含む）の
-直近 3 本 — `jev-guard-blind-to-local-verify`・`harness-scope-writing-harness`・`readme-human-llm-fold` — の通読指摘数を、
-その稿の処分記録と commit 本文から拾って、次の Zenn 稿の brief を書く前に埋める。拾えない稿は指摘数を「不明」と書き、
-その前の Zenn 稿で置き換える。
+比較の基準は「ペルソナ読み: なし」の行。ペルソナ読みを使う前の 3 本（`jev-guard-blind-to-local-verify`・
+`harness-scope-writing-harness`・`readme-human-llm-fold`）は、その稿の処分記録と commit 本文から拾って埋めてある。
 
 数え方: その稿の `drafts/<slug>.corrections.md`（著者の指摘の記録）のうち、Trigger が「通読で」の件。brief の対話・
 reviewer の指摘・タイトル・公開後の見直しから来た件は数えない。
