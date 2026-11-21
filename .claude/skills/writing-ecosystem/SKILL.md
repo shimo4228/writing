@@ -151,7 +151,7 @@ GO の時点で、通読の指摘数と、そのうちレビューが先に挙�
 [`evals/read-through-log.md`](evals/read-through-log.md) に 1 行足す（全 channel。下の処分規律の「処分の偏りを見張る」）。
 
 図は内容 GO の後に起こす（brief の Figure plan をここで埋める。形の選び方と手順は channel ごとに決まる — Zenn は `zenn-format` の Figures、
-note / Substack のエッセイは [`references/essay-figures.md`](references/essay-figures.md) の動く図。
+note / Substack のエッセイは [`references/essay-figures.md`](references/essay-figures.md) の静止画の図。
 図の規約を持たない channel では Figure plan は「なし」と書く）。
 図の文字と本文の差分だけを `fact-checker` に回し、図を足した稿は著者がもう一度通読する。図と、
 それに添える alt や直後の 1 文の追加は構造変更ではないので、この通読は確認であり、内容 GO とタイトル選択は

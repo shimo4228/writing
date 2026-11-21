@@ -123,8 +123,8 @@ Zennの記事ページはhubへのリンクを`<a href>`として持たない（
 - note初出のJA正本は`note/<slug>.md`。Zennからの原文転載は`articles/<slug>.md`が正本で、`note/<slug>.md`は転載版。ENは`prose-translation`で`substack/<slug>-en.md`へ訳す
 - 新規稿はfrontmatterなし。既存の旧mirrorは変更しない
 - note は `note-publishing`、Substack は `substack-publishing` のHTML paste手順を使う
-- 図は順に組み上がるGIF。決まりと手順は `writing-ecosystem/references/essay-figures.md`。SVGは `figures/<slug>-<what>.svg`（ENは `-en.svg`）、
-  GIFは `images/<slug>-<what>.gif`（ENは `-en.gif`）、作る道具は `scripts/animate_figure.py`
+- 図は静止画のPNG。決まりと手順は `writing-ecosystem/references/essay-figures.md`。SVGは `figures/<slug>-<what>.svg`（ENは `-en.svg`）、
+  PNGは `images/<slug>-<what>.png`（ENは `-en.png`）、作る道具は `rsvg-convert`
 - 公開後は`scripts/corpus.yml`を更新し、`npm run generate:index`
 
 ## Related

@@ -40,13 +40,13 @@ uv run --project scripts python scripts/note_publish.py prepare articles/SLUG.md
 `images/covers/<slug>-note.png`。アップロードは下の画面操作 6、著者が自分で貼る場合は
 エディターの「画像を追加」から同じファイルを選ぶ。
 
-## 本文の図（GIF）
+## 本文の図
 
-図の決まりと作り方は `.claude/skills/writing-ecosystem/references/essay-figures.md` が持つ。note の本文は GIF を
-そのまま受け取り、`assets.st-note.com` に `.gif` で置く（2026-11-15 実測、350〜670KB の 3 枚）。入れるのは
+図の決まりと作り方は `.claude/skills/writing-ecosystem/references/essay-figures.md` が持つ。図は PNG で、
+`assets.st-note.com` に置かれる（2026-11-15 に GIF 3 枚、2026-11-21 に PNG 3 枚で同じ手順を実測）。入れるのは
 下の画面操作 5 の読み戻しが通った後、見出し画像の前後どちらでもよい。
 
-1. 図の alt と path の行（`![…](/images/<slug>-<what>.gif)`）を足した原稿で prepare をやり直す。
+1. 図の alt と path の行（`![…](/images/<slug>-<what>.png)`）を足した原稿で prepare をやり直す。
    manifest の `expected.images` が図の枚数になる
 2. エディターで、アップロード中の通知を記録に差し替える。note はアップロード中に自動保存が走ると
    `alert("画像アップロード中です")` を出し、閉じるまで拡張機能からの操作と画面取得がすべて止まる
@@ -57,7 +57,7 @@ uv run --project scripts python scripts/note_publish.py prepare articles/SLUG.md
 
 3. 画面操作 6 と同じ click の捕捉を入れる
 4. 図ごとに、対応する段落の最後の行の右側をクリックしてカーソルを段落の末尾に置き、その行の左に出る「+」→
-   「画像」を押す。捕捉された `input[type=file]`（id `note-editor-image-upload-input`）へ file_upload で GIF を
+   「画像」を押す。捕捉された `input[type=file]`（id `note-editor-image-upload-input`）へ file_upload で PNG を
    投入する。図は段落の直後に `<figure>` として入る。空行を作ろうとして Return を送ると段落の中に改行が入るので、
    行は作らず「+」から入れる
 5. `img` の `src` が `assets.st-note.com` に変わるまで待ってから次の図へ進む（1 枚 10〜20 秒）。キャプションは空のままにする
@@ -65,9 +65,10 @@ uv run --project scripts python scripts/note_publish.py prepare articles/SLUG.md
 6. 「下書き保存」→ 画面操作 5 の読み戻し。body / links / headings が一致し、images は枚数が一致すれば通す
    （`src` は原稿の path から note の URL に変わるので、verify の `mismatch` に images が出る）
 
-body.html の `<img>` を本文ごと貼ったときにエディターがどう扱うかは確かめていない（2026-11-15 は図の無い本文を
-貼った下書きに図を足した）。本文を貼った直後にエディター内の `img` を数え、0 でなければ貼られた要素を消してから
-上の手順で入れる。
+body.html の `<img>` を本文ごと貼ると、エディターは `img` を作らず、図の位置にアップロード待ちの部品
+（`div.placeholder.ProseMirror-widget`、読み込み中の点が回り続ける）を残す（2026-11-21 実測、3 枚とも）。部品は
+文書の中身でなく、「下書き保存」してから再読み込みすると消え、本文は残る。再読み込みは「Leave site?」で止まるので、
+保存の後に破棄して進める。消えたのを `.placeholder` の数 0 で確かめてから、上の手順で図を入れる。
 
 ## ハッシュタグ
 

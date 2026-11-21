@@ -66,6 +66,7 @@ python3 -c "import json;d=json.load(open('$D/note.json'))['data'];print(d['publi
 
 | slug | 公開 | tags |
 |---|---|---|
+| thinking-romanticism | 2026-11-21 | #瞑想 #上達 #暗黙知 #ポランニー #熟達 |
 | stopped-music-ran-out-of-asks | 2026-11-09 | #AIコーディング #AIと音楽 #剥奪 #作る意味 #音楽をやめた |
 | harness-scope-writing-harness | 2026-10-04 | #Claude #スキル #AIライティング #MOD #ハーネス #自動化したいこと #ClaudeMods |
 | agi-judgment-trail | 2026-10-01 | #ClaudeCode #情熱 #AGI #不条理 #無意味 #ハーネスエンジニアリング |
