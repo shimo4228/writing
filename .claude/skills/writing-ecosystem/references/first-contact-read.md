@@ -12,4 +12,4 @@ Read-only review. Do not edit files (no --write).
 加えて、本文から弁護できるカテゴリのすり替え・事実の矛盾・帰属の誤りを挙げる。ヘッジの追加は求めない。日本語で書く。
 ```
 
-渡すのは原稿・contract・checklist の path だけ。brief、central thesis、causal spine、成功基準、ほかの reviewer の結果は渡さない。
+渡すのは原稿・contract・checklist の path だけ。brief、central thesis、spine、成功基準、ほかの reviewer の結果は渡さない。

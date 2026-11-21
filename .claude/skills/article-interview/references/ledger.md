@@ -38,5 +38,5 @@ dossier 末尾の `## インタビュー` 節に、この形で書く。tier は
 
 ```
 
-brief への写し先: ① → Author's words、② #1 → Entry bridge、② → Causal spine の観察、③ → Reader、④ → Causal spine の緊張、
+brief への写し先: ① → Author's words、② #1 → Entry bridge、②・④ → Spine の材料（どの段に使うかは題材の線が決める）、③ → Reader、
 ⑤・⑥の捨てた方向 → Out of scope、⑥の選んだ方向 → Central thesis。

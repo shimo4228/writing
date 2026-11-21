@@ -1,6 +1,6 @@
 ---
 name: writing-ecosystem
-description: 人間向け記事・エッセイ・ブログポスト・ニュースレターの唯一の執筆 orchestrator。project の publication channel contract を読み、中心命題 1 つの editorial brief、因果線、証拠の選択と除外、構成、執筆、観点別レビュー、著者の内容 GO、タイトル、quality-gate までを統括する。Use when — 「この記事を書いて」「このテーマでエッセイにして」「原稿の論点を一つに絞って構造改稿して」のような新規執筆・全体改稿・全文の別 channel 展開。NOT for — 一文や段落だけの翻訳（→ prose-translation）、title だけ（→ headline-craft）、SNS の告知・断片（→ social-post）、公開 thread 返信（→ public-comment）、AI 向け docs、README、paper、媒体固有の公開操作。
+description: 人間向け記事・エッセイ・ブログポスト・ニュースレターの唯一の執筆 orchestrator。project の publication channel contract を読み、中心命題 1 つの editorial brief、記事の線、証拠の選択と除外、構成、執筆、観点別レビュー、著者の内容 GO、タイトル、quality-gate までを統括する。Use when — 「この記事を書いて」「このテーマでエッセイにして」「原稿の論点を一つに絞って構造改稿して」のような新規執筆・全体改稿・全文の別 channel 展開。NOT for — 一文や段落だけの翻訳（→ prose-translation）、title だけ（→ headline-craft）、SNS の告知・断片（→ social-post）、公開 thread 返信（→ public-comment）、AI 向け docs、README、paper、媒体固有の公開操作。
 compatibility: Designed for Claude Code (or similar agent products). Orchestrates the review agents under <project>/.claude/agents/.
 user-invocable: true
 origin: shimo4228
@@ -39,7 +39,7 @@ pointer、`collect-context` が作る evidence dossier の順に限定して受�
 | **Theme discovery** | `session-theme-mining` skill | Claude / Codex 履歴横断から 0〜3 件の同格な問いを発見し、著者の選択で止まる | 執筆スコープがまだ決まっていないとき |
 | **Pre-write** | `collect-context` skill | 素材収集と証拠台帳（Claims Register / 一次・⚠未検証の tier）。編集判断はしない | 執筆前に素材を集めるとき |
 | **Interview** | `.claude/skills/article-interview/SKILL.md` | 著者に一問ずつ聞き、台帳を dossier 末尾に書き、方向を著者が選ぶ。構成・題・命題は出さない | 素材集めの後、brief の前 |
-| **Write** | 本 skill「editorial brief と執筆フロー」 | 中心命題・因果線・証拠選択・構成・執筆 | 初稿・改稿 |
+| **Write** | 本 skill「editorial brief と執筆フロー」 | 中心命題・記事の線・証拠選択・構成・執筆 | 初稿・改稿 |
 | **Title** | `headline-craft` skill | 「開かせる一行」の候補生成と、本文から切り離した初見読み・約束の監査 | 著者の内容 GO 後、quality-gate の前 |
 | **Review: 観点別** | `review-structure` / `review-certainty` / `review-explanation` / `review-prose` / `review-conventions` agent | 構造・確度・説明と証拠・文章と語・規約を 1 観点ずつ。総合評価は出さない | 初稿のレビュー時（全 channel） |
 | **Review: 初見明瞭性（cross-model）** | Codex plugin の `codex:codex-rescue` agent（読み取り専用、checklist は `prose-clarity-reviewer` agent） | 第一画面・中心命題・内部文脈依存・カテゴリのすり替え | 初稿のレビュー時 |
@@ -79,7 +79,7 @@ brief の Out of scope か Entry bridge へ入れる。広い調査が要ると�
 （著者が別ツールで実行し、結果を会話に貼る）。経験の報告では命題が外部言説との差分に依存しないので、この調査は要らない。
 
 **2d. brief。** 台帳と dossier から次の **editorial brief** を `docs/plans/<slug>.md` に書く（reviewer の dispatch prompt に
-この path を渡す）。著者に確認を求めるのは Causal spine だけで、他の欄は台帳と dossier から埋める — 方向は 2b で著者が
+この path を渡す）。著者に確認を求めるのは Spine だけで、他の欄は台帳と dossier から埋める — 方向は 2b で著者が
 選んでいる。進め方の plan が要るときは brief の後に書く。
 
 ```markdown
@@ -89,9 +89,9 @@ Author's words: <台帳①からの転記だけ。要約・言い換えをしな
 Central thesis: <台帳⑥で著者が選んだ方向を、この原稿が成立させる命題一文にしたもの。必ず一つ。確度は Author's words のまま（背骨 1）>
 Entry bridge: <読者の出発点から、なぜ中心命題を考える意味があるかが伝わる場面・観察・問いを1〜2文で。既定は台帳②の 1 件目>
 Figure plan: <内容 GO の後に埋める。節 → 形（対比 / 流れ / 階層 / 2 軸 / 並列）→ 図の有無。並列は list のまま>
-Causal spine: <観察 / 問題 → 緊張 → 機序 → 著者の判断（決めたこと・決めなかったこと）。観察は台帳②、緊張は台帳④、機序は台帳①の発言と orchestrator の展開から>
+Spine: <記事の線。形は題材から選ぶ（因果を追う / 比べる / 分ける / 問いを開いたまま進む。背骨 3）。段を順に書き、終点は著者の判断（決めたこと・決めなかったこと）。材料は台帳①②④と orchestrator の展開で、台帳の番号を段に割り付けない。2026-11-21 より前の brief では Causal spine>
 Selected evidence:
-- <evidence id>: <因果線での役割。台帳②の出来事との対応>
+- <evidence id>: <記事の線での役割。台帳②の出来事との対応>
 Out of scope:
 - <先頭に台帳⑥の捨てた方向、⑤の入らないと言われた記録。次に面白いがこの命題を進めない論点。記録や計測で確かめられる推論は、ここへ落とす前に著者へ聞く（背骨 4）。著者が通読で捨てた段落は聞き直さずに置く>
 ```
@@ -104,14 +104,15 @@ Out of scope:
 ### 3. Outline and draft
 
 導入は Entry bridge の場面・観察・問いで開く。執筆理由や背景は、読者を場面に置いた後に、その場面が
-要る分だけ書く。読者が共有していない前提は本文で補う。各 load-bearing section に causal spine 上の役割を
+要る分だけ書く。読者が共有していない前提は本文で補う。各 load-bearing section に Spine 上の役割を
 一つだけ割り当て、採用 evidence を紐付ける。並列の agenda を節として足さない。語・節の切れ目・時間・
 証拠の置き方は背骨の 2・5・6 に従う。本文は orchestrator の文章で書く。brief の Author's words と台帳は素材で、
 答えの順や言い回しをなぞって並べない（背骨 2・4）。読者を入れる場面、節の順、例、機序の説明は orchestrator が組み立て、
-因果線の各段を自分の推論で展開する。執筆中に別の中心命題が現れたら混ぜずに停止し、editorial brief を
+記事の線の各段を自分の推論で展開する（声と強さは背骨 1: 評価の語は足さず、機序は支えのある範囲で断定する）。
+「ここで」「こうして」のような道案内を等間隔に置かない。執筆中に別の中心命題が現れたら混ぜずに停止し、editorial brief を
 再確認する（背骨 4）。out-of-scope は本文から外す — `details` に押し込むと、読者には本文の一部として届く。
 
-翻訳は `prose-translation` を使い、承認済み central thesis、causal spine、selected evidence、
+翻訳は `prose-translation` を使い、承認済み central thesis、spine、selected evidence、
 out-of-scope を保持する。翻訳先の local contract へ route し直す。
 
 ### 3.5. Persona read（著者が頼んだときだけ）
@@ -135,11 +136,12 @@ out-of-scope を保持する。翻訳先の local contract へ route し直す�
 同じ文面で 5 本に渡し、ほかの agent の結果は渡さない。全 channel で 5 本を回す（channel の違いは各 agent が contract の該当行から読む）。
 
 **事実。** `fact-checker` の dispatch prompt には証拠台帳と一次資料の path（repo、出力ファイル）を名指しで渡す — code / path / 出力の
-照合はこの agent が持ち、観点別レビューは判断だけを持つ。
+照合はこの agent が持ち、観点別レビューは判断だけを持つ。著者の発言から来た文でも、外の世界についての一般的な事実（用語の対応、
+分野の定説、歴史）は照合の対象に入れる（2026-11-21 の稿で対象から外し、4 か所が通読まで残った）。
 
 **初見の読み。** Claude と別系統のモデルが担う — 同じ系統の reviewer は orchestrator と同じ所を読み飛ばす（原則 3）。
 Codex plugin（openai/codex-plugin-cc）の `codex:codex-rescue` agent を background で起動し、[`references/first-contact-read.md`](references/first-contact-read.md)
-の文面をそのまま渡す（文面を毎回組み立てない。原則 8）。central thesis・causal spine・成功基準は渡さない — 答えを持って読むと
+の文面をそのまま渡す（文面を毎回組み立てない。原則 8）。central thesis・spine・成功基準は渡さない — 答えを持って読むと
 「何をしたのか分からない」を検出できなくなる（経緯は ADR-0013）。中継役の agent が返ってこないときは、Codex 側の結果を
 `node ~/.claude/plugins/cache/openai-codex/codex/*/scripts/codex-companion.mjs status` → `result <job-id>` で取り出す。
 Codex が使えないときは Claude で代替せず、処分記録に「別系統の読み: なし（理由）」と書き、著者への報告に 1 行で添える
@@ -195,11 +197,14 @@ note / Substack のエッセイは [`references/essay-figures.md`](references/es
   入ったときだけ、その差分を対象に回す。全文の再照合は構造が動くたびに同じ主張を払い直すことになる
 - **cross-model 指摘の採用**: 初見の読みの findings と、カテゴリのすり替え・事実誤り・帰属の誤りを
   採用候補にし、ヘッジや限定句の追加を求める指摘は採用しない。全採用は一文ずつ正しくして通読を重くする。
+  「評価や主張が強すぎる」という指摘は別の型で、観点別レビューから来たものも含めて採用を検討する。直し方は限定句を足すことでなく、
+  評価の語を著者の発言の強さへ戻すか、主張の元の事実を確かめること（通読の確度の指摘は 3 稿続けて言いすぎの側だった。`evals/read-through-log.md`）。
   既定の裁定:
 
   | finding の型 | 既定 |
   |---|---|
   | ヘッジ済み思弁への「根拠不足」 | 不採用（発見調は仮説明示つきの思弁を許す） |
+  | 評価の語・主張が、著者の発言や根拠より強い | 常に採用検討。限定句で済ませず、語を戻すか事実を確かめる |
   | カテゴリのすり替え（実行↔動機、順番づけ↔確率の近さ 等） | 常に採用検討 |
   | 概念・歴史的接続の過大主張、帰属の誤り | 常に採用検討 |
   | 文体規約違反（register 混在・意図外の常体） | 採用（意図的ブレイクと照合の上で） |
@@ -254,18 +259,19 @@ fact-check で確定した一次資料を、**本文の出典セクションに�
 
 ## Genre shapes
 
-どの shape も central thesis と causal spine に従属する。複数論点を統合できるのは、同じ中心命題の因果線で
+どの shape も central thesis と spine に従属する。複数論点を統合できるのは、同じ中心命題の線で
 上下関係を持つ場合だけである。
 
 | genre | 構成 |
 |---|---|
-| 実用記事 / チュートリアル | Entry bridge の直後に、読者が何を得るかを言う。主要節ごとにコードか端末出力を置く。締めは因果線の著者の判断で終える（背骨 3） |
-| エッセイ / オピニオン | 下の 4 段構成。1 節 1 論点、意見を支える実例を置く |
+| 実用記事 / チュートリアル | Entry bridge の直後に、読者が何を得るかを言う。主要節ごとにコードか端末出力を置く。締めは著者の判断で終える（背骨 3） |
+| エッセイ / オピニオン | 題材の線に合う形で書く。1 節 1 論点、意見を支える実例を置く。下の 4 段構成は型の一つ |
 | ニュースレター | 最初の 1 画面を強くする。近況の羅列にせず洞察を混ぜる。節ラベルで走査可能にする |
 
 ### エッセイの 4 段構成（Hero's Journey 型）
 
-essay の既定構成（出典: Kaguura 2026、ADR-0007）:
+essay の型の一つ（出典: Kaguura 2026、ADR-0007）。読者を問題へ連れて行き、答えを渡す稿に合う。比べる稿、問いを開いたまま進む稿には
+当てはめない:
 
 1. **Calm Story** — Entry bridge の場面で開き、低認知負荷で読者を著者の声に慣れさせる
 2. **Plunge（緊張）** — 読者が乗ったところで、大きな問題・不都合な真実・パラドックスを提示する
